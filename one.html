@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <!-- <link rel="stylesheet" href="index.css" /> -->
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: rgb(137, 200, 255);
+  }
+
+  
+  
+  #submit {
+    width: 70%;
+    margin: auto;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 15px;
+  }
+ 
+  
+  input
+ {
+    display: block;
+    margin: 15px 0px;
+    font-size: 20px;
+    padding: 2%;
+  }
+  option {
+    font-size: 25px;
+  }
+  form {
+    width: 320px;
+    border-radius: 10px;
+    height: 500px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 3% auto;
+    padding: 3%;
+    background: rgb(255, 255, 255);
+  }
+
+ 
+
+
+#form >h1{
+    margin-left: 70px;
+    margin-bottom: 50px;
+    padding-top: 40px;
+}
+ 
+#form > #password+input{
+    color: rgb(255, 255, 255);
+    background-color: blue;
+    /* margin-left: 100px; */
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h4 > span{
+    color:rgb(104, 16, 255);
+}
+h4{
+    color: gray;
+}
+
+
+
+    </style>
+
+  </head>
+
+  <body>
+   
+
+
+    <form id="form">
+      <h1>Login</h1>
+      <input placeholder="Email" id="email" type="email" />
+      <input placeholder="Password"  id="password" type="number" />
+     
+      <input type="submit" value="Login" />
+
+      <br>
+
+      <h4>Forgot <span>Password?</span></h4><br>
+    <h4>Don't have an account?<span>Sign up</span></h4>
+    </form>
+    
+  </body>
+  <script>
+     
+     document.querySelector("form").addEventListener("submit", myFunction);
+
+var loginArr = JSON.parse(localStorage.getItem("loginList")) || [];
+// var contactArr =[];
+
+function myFunction() {
+event.preventDefault();
+
+
+var loginObj = {
+  loginMail: form.email.value,
+  loginPassword: form.password.value,
+
+ 
+};
+loginArr.push(loginObj);
+console.log(loginArr);
+localStorage.setItem("loginList",JSON.stringify(loginArr));
+
+window.location.href = "mens.html";
+
+}
+
+  </script>
+
+
